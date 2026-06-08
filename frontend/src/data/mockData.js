@@ -78,7 +78,7 @@ export const projectsData = [
     github: "https://github.com/gokulraj1127mm-gif",
     live: "https://daily-expense-tracker-3-cviw.onrender.com"
   }
-  
+
 ];
 
 export const experienceData = [
