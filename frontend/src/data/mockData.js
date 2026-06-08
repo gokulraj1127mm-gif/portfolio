@@ -67,6 +67,16 @@ export const projectsData = [
     image:"https://play-lh.googleusercontent.com/MuzIpFolgzfIKUOzzQBvB6kmba1FFi_aF35BkDPCGS7oeRo-_hHLstrO6ksEmtrvnA",
     github: "https://github.com/gokulraj1127mm-gif",
     live: "https://electricity-bill-app-flame.vercel.app/"
+  },
+  {
+    id: 3,
+    title: "Daily-Expense-Tracker Web App",
+    description: "A Daily Expense Tracker helps you easily record and manage your daily spending and income.",
+    technologies: ["JavaScript", "HTML", "CSS", "React","Node.js","Express.js"],
+    role: "MERN Stack Developer",
+    image:"https://play-lh.googleusercontent.com/z9aDlvPVi7ZtxQjTKCmcuzF1c14x6fjcCY7JWPAsHXyo_xJPwKlS1-MVfPZRvWXyow",
+    github: "https://github.com/gokulraj1127mm-gif",
+    live: "https://daily-expense-tracker-3-cviw.onrender.com"
   }
   
 ];
