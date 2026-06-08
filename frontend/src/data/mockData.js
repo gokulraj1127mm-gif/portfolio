@@ -58,6 +58,16 @@ export const projectsData = [
     github: "https://github.com/gokulraj1127mm-gif",
     live: "#"
   },
+    {
+    id: 2,
+    title: "Electricity Bill Calculator Web App",
+    description: "Built a full-stack Electricity Bill Calculator with automated bill calculation, subsidy management, bill history, and PDF generation features.",
+    technologies: ["JavaScript", "HTML", "CSS", "React","Node.js","Express.js"],
+    role: "MERN Stack Developer",
+    image:"https://play-lh.googleusercontent.com/MuzIpFolgzfIKUOzzQBvB6kmba1FFi_aF35BkDPCGS7oeRo-_hHLstrO6ksEmtrvnA",
+    github: "https://github.com/gokulraj1127mm-gif",
+    live: "https://electricity-bill-app-flame.vercel.app/"
+  }
   
 ];
 
@@ -91,6 +101,20 @@ export const certificationsData = [
     date: "2024",
     icon: "Award"
   },
+  {
+    id:3,
+    name:"Getting Started with Full Stack Java Development",
+    platform:"simplilearn",
+    date:"2026",
+    icon:"Award"
+  },
+  {
+    id:4,
+    name:"Deep Learning",
+    platform:"simplilearn",
+    date:"2026",
+    icon:"Award"
+  }
 ];
 
 export const educationData = [
