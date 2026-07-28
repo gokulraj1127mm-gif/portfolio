@@ -64,7 +64,7 @@ export const projectsData = [
     description: "Built a full-stack Electricity Bill Calculator with automated bill calculation, subsidy management, bill history, and PDF generation features.",
     technologies: ["JavaScript", "HTML", "CSS", "React","Node.js","Express.js"],
     role: "MERN Stack Developer",
-    image:"https://play-lh.googleusercontent.com/MuzIpFolgzfIKUOzzQBvB6kmba1FFi_aF35BkDPCGS7oeRo-_hHLstrO6ksEmtrvnA",
+    image:"https://play-lh.googleusercontent.com/DUK2sg9G0YJhbCJsGvtwxpahh9MMwqUECq_-WQjIZNQKPBRHdTPfbj3unS3xuE5tE0NkAod1sacgW9NmlgKp",
     github: "https://github.com/gokulraj1127mm-gif",
     live: "https://electricity-bill-app-flame.vercel.app/"
   },
@@ -74,9 +74,19 @@ export const projectsData = [
     description: "A Daily Expense Tracker helps you easily record and manage your daily spending and income.",
     technologies: ["JavaScript", "HTML", "CSS", "React","Node.js","Express.js"],
     role: "MERN Stack Developer",
-    image:"https://play-lh.googleusercontent.com/z9aDlvPVi7ZtxQjTKCmcuzF1c14x6fjcCY7JWPAsHXyo_xJPwKlS1-MVfPZRvWXyow",
+    image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFxigCYAwzg_5peLTRXgkgKd65qoS62QkGO6XW_Flmhw&s=10",
     github: "https://github.com/gokulraj1127mm-gif",
     live: "https://daily-expense-tracker-3-cviw.onrender.com"
+  },
+  {
+    id: 4,
+    title: "Smart Exam Seat Allocation System",
+    description: "A Smart Exam Seat Allocation System helps you easily manage and allocate exam seats.",
+    technologies: ["JavaScript", "HTML", "CSS", "React","Node.js","Express.js"],
+    role: "MERN Stack Developer",
+    image:"https://cdn.iconscout.com/icon/premium/png-256-thumb/classroom-seating-icon-svg-download-png-2301876.png",
+    github: "https://github.com/gokulraj1127mm-gif",
+    live: "https://smart-exam-seat-allocation-system-1.onrender.com"
   }
 
 ];
