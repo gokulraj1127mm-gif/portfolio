@@ -21,8 +21,8 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#0a0a0b] text-white font-sans overflow-x-hidden">
-      {/* Floating Background Icons */}
+    <div className="min-h-screen bg-[#08090a] text-slate-100 font-sans overflow-x-hidden selection:bg-emerald-500/30 selection:text-white">
+      {/* Floating Background Ambient Layer */}
       <FloatingIcons />
       
       {/* Navigation */}

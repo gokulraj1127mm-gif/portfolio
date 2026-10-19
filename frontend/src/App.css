@@ -1,95 +1,109 @@
-/* ================= GLOBAL ================= */
+/* ================= GLOBAL & EDITORIAL STYLES ================= */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 html {
     scroll-behavior: smooth;
+    color-scheme: dark;
 }
 
 body {
     margin: 0;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-        'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-        'Helvetica Neue', sans-serif;
-    background-color: #000000; /* BLACK BACKGROUND */
-    color: white;
+    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    background-color: #08090a;
+    color: #e2e8f0;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-/* ================= APP ================= */
+/* ================= AMBIENT EDITORIAL GRID BACKGROUND ================= */
 
-.App-header {
-    background-color: #000000; /* BLACK */
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+.bg-editorial-grid {
+    background-image: 
+        radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.08) 0%, transparent 60%),
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 100% 100%, 48px 48px, 48px 48px;
 }
 
-/* ================= LOGO ================= */
+/* ================= EDITORIAL CARD & SURFACES ================= */
 
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+.editorial-card {
+    background: rgba(13, 16, 15, 0.72);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+.editorial-card:hover {
+    border-color: rgba(16, 185, 129, 0.32);
+    box-shadow: 0 12px 36px -10px rgba(16, 185, 129, 0.14);
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.editorial-glass {
+    background: rgba(10, 12, 11, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* ================= LINKS ================= */
+/* ================= EMERALD ACCENTS & GLOWS ================= */
 
-.App-link {
-    color: #18be42; /* GREEN ACCENT */
-    font-weight: 500;
+.emerald-glow {
+    box-shadow: 0 0 40px -10px rgba(16, 185, 129, 0.3);
 }
 
-.App-link:hover {
-    color: #5cff8d; /* LIGHT GREEN */
+.emerald-glow-sm {
+    box-shadow: 0 0 20px -5px rgba(16, 185, 129, 0.25);
+}
+
+.text-gradient-emerald {
+    background: linear-gradient(135deg, #ffffff 30%, #34d399 70%, #10b981 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-silver {
+    background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /* ================= SCROLLBAR ================= */
 
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #000000; /* BLACK */
+    background: #08090a;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #18be42; /* GREEN */
-    border-radius: 4px;
+    background: rgba(16, 185, 129, 0.4);
+    border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #5cff8d; /* LIGHT GREEN */
+    background: rgba(52, 211, 153, 0.8);
 }
 
 /* ================= TEXT SELECTION ================= */
 
 ::selection {
-    background: rgba(24, 190, 66, 0.4); /* GREEN SELECTION */
-    color: white;
+    background: rgba(16, 185, 129, 0.35);
+    color: #ffffff;
 }
 
-/* ================= UTILITIES ================= */
+/* ================= ACCESSIBILITY / REDUCED MOTION ================= */
 
-.line-clamp-3 {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+@media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }

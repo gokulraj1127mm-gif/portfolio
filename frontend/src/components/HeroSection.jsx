@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Download, Mail, Github, Linkedin, Instagram } from 'lucide-react';
+import { Download, Mail, Github, Linkedin, Instagram, GraduationCap, ArrowDownRight, Sparkles } from 'lucide-react';
 import { Button } from './ui/button';
 import { profileData } from '../data/mockData';
 
@@ -15,164 +15,207 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20"
+      className="min-h-screen flex items-center justify-center relative pt-24 pb-16 md:py-32 overflow-hidden"
     >
-      {/* Background gradient - subtle green glow */}
-      <div className="absolute inset-0 bg-gradient-to-b from-green-900/5 via-transparent to-transparent" />
-      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-green-900/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-green-800/5 rounded-full blur-3xl" />
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-          {/* Left Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          {/* Left Column: Editorial Typography & Information */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="flex-1 text-center lg:text-left"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-7 text-center lg:text-left order-2 lg:order-1"
           >
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
+            {/* Status Pill */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-green-500 text-sm md:text-base font-medium mb-4 tracking-wider uppercase"
+              transition={{ delay: 0.15, duration: 0.6 }}
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/[0.08] border border-emerald-500/30 text-emerald-400 text-xs font-mono tracking-wider mb-6"
             >
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping opacity-75" />
+              <span className="w-2 h-2 rounded-full bg-emerald-400 -ml-4" />
+              <span className="uppercase font-semibold">Available for Opportunities</span>
+            </motion.div>
+
+            {/* Greeting */}
+            <motion.p
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.25, duration: 0.6 }}
+              className="text-emerald-400 font-mono text-sm tracking-[0.25em] uppercase mb-3 flex items-center justify-center lg:justify-start gap-2"
+            >
+              <span className="w-6 h-[1px] bg-emerald-500/60 hidden sm:inline-block" />
               Hello, I'm
             </motion.p>
-            
+
+            {/* Primary Visual Focus: Large Editorial Name */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight"
+              transition={{ delay: 0.35, duration: 0.7 }}
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-white leading-[1.04] mb-6"
             >
-              <span className="text-green-600">{profileData.name.split(' ')[0]}</span>{' '}
-              <span className="text-gray-100">{profileData.name.split(' ').slice(1).join(' ')}</span>
+              <span>{profileData.name.trim().split(' ')[0]}</span>{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-emerald-300 to-teal-200">
+                {profileData.name.trim().split(' ').slice(1).join(' ')}
+              </span>
             </motion.h1>
-            
-            <motion.h2
+
+            {/* Role & College */}
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              className="text-xl md:text-2xl text-gray-400 mb-2"
+              transition={{ delay: 0.45, duration: 0.7 }}
+              className="space-y-2 mb-6"
             >
-              {profileData.role}
-            </motion.h2>
-            
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-slate-100 tracking-tight">
+                {profileData.role}
+              </h2>
+              <p className="text-slate-400 text-sm sm:text-base flex items-center justify-center lg:justify-start gap-2">
+                <GraduationCap className="w-4 h-4 text-emerald-400 shrink-0" />
+                <span>{profileData.college}</span>
+              </p>
+            </motion.div>
+
+            {/* Introduction / Summary */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-              className="text-gray-500 mb-6"
-            >
-              {profileData.college}
-            </motion.p>
-            
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-              className="text-gray-300 text-base md:text-lg max-w-xl mb-8 leading-relaxed"
+              transition={{ delay: 0.55, duration: 0.7 }}
+              className="text-slate-300 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed font-normal"
             >
               {profileData.summary}
             </motion.p>
-            
-            {/* Buttons */}
+
+            {/* Action Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8"
+              transition={{ delay: 0.65, duration: 0.7 }}
+              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10"
             >
               <Button
                 size="lg"
-                className="bg-green-700 hover:bg-green-800 text-white font-medium px-8 transition-all duration-300"
+                className="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-400 text-[#05110a] font-bold text-sm px-7 h-12 rounded-xl transition-all duration-300 shadow-[0_0_25px_rgba(16,185,129,0.35)] hover:shadow-[0_0_35px_rgba(16,185,129,0.5)] flex items-center justify-center gap-2.5"
                 onClick={() => window.open(profileData.resumeUrl, '_blank')}
               >
-                <Download className="w-5 h-5 mr-2" />
-                Download Resume
+                <Download className="w-4 h-4" />
+                <span>Download Resume</span>
               </Button>
+
               <Button
                 variant="outline"
                 size="lg"
-                className="border-green-700/50 text-gray-300 hover:bg-green-700/10 hover:text-white hover:border-green-600 px-8 transition-all duration-300"
+                className="w-full sm:w-auto border-white/[0.12] bg-white/[0.03] hover:bg-white/[0.08] text-slate-200 hover:text-white hover:border-emerald-500/50 px-7 h-12 rounded-xl text-sm font-medium transition-all duration-300 flex items-center justify-center gap-2.5 backdrop-blur-sm"
                 onClick={handleContactClick}
               >
-                <Mail className="w-5 h-5 mr-2" />
-                Contact Me
+                <Mail className="w-4 h-4 text-emerald-400" />
+                <span>Contact Me</span>
               </Button>
             </motion.div>
-            
-            {/* Social Links */}
+
+            {/* Social Media Links */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8 }}
-              className="flex gap-4 justify-center lg:justify-start"
+              transition={{ delay: 0.75, duration: 0.7 }}
+              className="flex items-center justify-center lg:justify-start gap-3"
             >
+              <span className="text-xs font-mono text-slate-500 uppercase tracking-widest mr-2 hidden sm:inline-block">
+                Follow:
+              </span>
               <a
                 href={profileData.social.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-lg bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-green-700/10 hover:border-green-600/50 transition-all duration-300"
+                className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.08] text-slate-400 hover:text-white hover:border-emerald-500/40 hover:bg-emerald-500/10 hover:shadow-[0_0_15px_rgba(16,185,129,0.2)] transition-all duration-300"
+                aria-label="GitHub Profile"
               >
-                <Github className="w-5 h-5" />
+                <Github className="w-4 h-4" />
               </a>
               <a
                 href={profileData.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-lg bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-green-700/10 hover:border-green-600/50 transition-all duration-300"
+                className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.08] text-slate-400 hover:text-white hover:border-emerald-500/40 hover:bg-emerald-500/10 hover:shadow-[0_0_15px_rgba(16,185,129,0.2)] transition-all duration-300"
+                aria-label="LinkedIn Profile"
               >
-                <Linkedin className="w-5 h-5" />
+                <Linkedin className="w-4 h-4" />
               </a>
               <a
                 href={profileData.social.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-lg bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-green-700/10 hover:border-green-600/50 transition-all duration-300"
+                className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.08] text-slate-400 hover:text-white hover:border-emerald-500/40 hover:bg-emerald-500/10 hover:shadow-[0_0_15px_rgba(16,185,129,0.2)] transition-all duration-300"
+                aria-label="Instagram Profile"
               >
-                <Instagram className="w-5 h-5" />
+                <Instagram className="w-4 h-4" />
               </a>
             </motion.div>
           </motion.div>
-          
-          {/* Right Content - Profile Image */}
+
+          {/* Right Column: Editorial Profile Photo Showcase */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="flex-1 flex justify-center lg:justify-end"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-5 flex justify-center order-1 lg:order-2"
           >
-            <div className="relative">
-              {/* Decorative ring */}
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
-                className="absolute inset-0 rounded-full border-2 border-dashed border-green-700/30"
-                style={{ width: '320px', height: '320px', top: '-10px', left: '-10px' }}
-              />
+            <div className="relative w-full max-w-[320px] sm:max-w-[360px] md:max-w-[380px]">
               
-              {/* Image container */}
-              <div className="relative w-[280px] h-[280px] md:w-[300px] md:h-[300px] rounded-full overflow-hidden border-4 border-green-700/20 shadow-2xl shadow-green-900/20">
-                <div className="absolute inset-0 bg-gradient-to-br from-green-700/20 to-transparent" />
-                <img
-                  src={profileData.profileImage}
-                  alt={profileData.name}
-                  className="w-full h-full object-cover"
-                />
+              {/* Backlight Ambient Emerald Glow */}
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-emerald-500/25 via-emerald-600/10 to-transparent blur-3xl transform -translate-y-4" />
+
+              {/* Outer Refined Editorial Frame */}
+              <div className="relative p-3 rounded-3xl bg-[#0e1210]/80 border border-white/[0.1] shadow-2xl backdrop-blur-xl">
+                
+                {/* Tech corner accents */}
+                <div className="absolute top-2 left-2 w-2 h-2 border-t border-l border-emerald-400/60" />
+                <div className="absolute top-2 right-2 w-2 h-2 border-t border-r border-emerald-400/60" />
+                <div className="absolute bottom-2 left-2 w-2 h-2 border-b border-l border-emerald-400/60" />
+                <div className="absolute bottom-2 right-2 w-2 h-2 border-b border-r border-emerald-400/60" />
+
+                {/* Image Container with Subtle Gradient Overlay */}
+                <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-[#121614] border border-white/[0.06]">
+                  <img
+                    src={profileData.profileImage}
+                    alt={profileData.name}
+                    className="w-full h-full object-cover object-center filter contrast-[1.05] brightness-[0.98] transition-transform duration-700 hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#08090a]/80 via-transparent to-transparent pointer-events-none" />
+                </div>
+
+                {/* Floating "IT Student" Badge */}
+                <motion.div
+                  animate={{ y: [0, -6, 0] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+                  className="absolute -bottom-4 right-4 sm:-right-4 px-4 py-2.5 rounded-xl bg-[#090c0a]/95 border border-emerald-500/40 shadow-xl shadow-black/60 backdrop-blur-md flex items-center gap-2.5"
+                >
+                  <span className="relative flex h-2.5 w-2.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
+                  </span>
+                  <div className="text-left">
+                    <span className="block text-[10px] font-mono uppercase tracking-wider text-slate-400 leading-none mb-0.5">
+                      Status
+                    </span>
+                    <span className="block text-emerald-400 font-bold text-xs leading-none">
+                      IT Student
+                    </span>
+                  </div>
+                </motion.div>
+
+                {/* Subtitle tag in frame */}
+                <div className="mt-3 px-1 flex items-center justify-between text-[11px] font-mono text-slate-400">
+                  <span>// GOKUL RAJ</span>
+                  <span className="text-emerald-400">2022 - 2026</span>
+                </div>
               </div>
-              
-              {/* Floating badge */}
-              <motion.div
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute -bottom-4 -right-4 bg-[#141414] border border-green-700/30 rounded-lg px-4 py-2 shadow-lg"
-              >
-                <span className="text-green-500 font-semibold">IT Student</span>
-              </motion.div>
             </div>
           </motion.div>
+
         </div>
       </div>
     </section>

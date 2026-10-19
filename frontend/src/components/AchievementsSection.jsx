@@ -1,40 +1,47 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Trophy, Medal, Star } from 'lucide-react';
+import { Trophy, Medal, Star, Award } from 'lucide-react';
 import { achievementsData } from '../data/mockData';
 
 const getIcon = (iconName) => {
   const icons = {
-    Trophy: Trophy,
-    Medal: Medal,
-    Star: Star
+    Trophy,
+    Medal,
+    Star,
+    Certificate: Award
   };
   return icons[iconName] || Trophy;
 };
 
 const AchievementsSection = () => {
   return (
-    <section id="achievements" className="py-20 md:py-32 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="achievements" className="py-24 md:py-36 relative border-t border-white/[0.06]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="mb-16 md:mb-20 text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
-            <span className="text-green-500">Achievements</span>
+          <div className="inline-flex items-center gap-2 text-emerald-400 font-mono text-xs uppercase tracking-[0.25em] mb-3">
+            <span>// 07</span>
+            <span className="w-8 h-[1px] bg-emerald-500/40" />
+            <span>Honors &amp; Milestones</span>
+          </div>
+
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-4">
+            <span className="text-emerald-400">Achievements</span>
           </h2>
-          <div className="w-20 h-1 bg-green-600 mx-auto rounded-full" />
-          <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
+          <p className="text-slate-400 max-w-2xl mx-auto text-base sm:text-lg">
             Recognition and accomplishments along my journey
           </p>
         </motion.div>
 
-        {/* Achievements Grid */}
-        <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        {/* Achievements Showcase */}
+        <div className="max-w-2xl mx-auto">
           {achievementsData.map((achievement, index) => {
             const IconComponent = getIcon(achievement.icon);
             return (
@@ -42,30 +49,35 @@ const AchievementsSection = () => {
                 key={achievement.id}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.15, duration: 0.5 }}
-                whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                className="group relative p-6 rounded-xl bg-[#141414] border border-white/10 hover:border-green-600/40 transition-all duration-300 text-center overflow-hidden shadow-lg shadow-black/20"
+                viewport={{ once: true, margin: '-50px' }}
+                transition={{ delay: index * 0.15, duration: 0.6 }}
+                className="p-8 sm:p-10 rounded-3xl bg-[#0d100e]/90 border border-white/[0.08] hover:border-emerald-500/40 transition-all duration-300 shadow-2xl shadow-black/40 text-center relative overflow-hidden group"
               >
-                {/* Glow Effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-green-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                
-                {/* Icon */}
-                <div className="relative w-16 h-16 mx-auto rounded-full bg-green-600/10 flex items-center justify-center mb-4 group-hover:bg-green-600/20 transition-colors">
-                  {IconComponent && <IconComponent className="w-8 h-8 text-green-500" />}
-                </div>
+                {/* Ambient glow */}
+                <div className="absolute inset-0 bg-gradient-to-b from-emerald-500/[0.06] to-transparent pointer-events-none" />
 
-                {/* Content */}
-                <h3 className="relative text-lg font-semibold text-white mb-3 group-hover:text-green-400 transition-colors">
-                  {achievement.title}
-                </h3>
-                <p className="relative text-gray-400 text-sm leading-relaxed">
-                  {achievement.description}
-                </p>
+                <div className="relative z-10 flex flex-col items-center">
+                  <div className="w-16 h-16 rounded-2xl bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center text-emerald-400 mb-6 group-hover:bg-emerald-500/20 group-hover:border-emerald-400 group-hover:scale-110 transition-all">
+                    <IconComponent className="w-8 h-8 text-emerald-400" />
+                  </div>
+
+                  <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors tracking-tight">
+                    {achievement.title}
+                  </h3>
+
+                  <p className="text-slate-300 text-base sm:text-lg max-w-md mx-auto leading-relaxed">
+                    {achievement.description}
+                  </p>
+
+                  <div className="mt-6 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] font-mono text-xs text-emerald-400">
+                    <span>Department Recognition</span>
+                  </div>
+                </div>
               </motion.div>
             );
           })}
         </div>
+
       </div>
     </section>
   );

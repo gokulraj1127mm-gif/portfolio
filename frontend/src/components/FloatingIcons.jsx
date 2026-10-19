@@ -1,58 +1,61 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const techIcons = [
-  { name: 'HTML', color: '#166534', path: 'M3 2l1.578 17.824L12 22l7.422-2.176L21 2H3zm14.594 5.552l-.344 3.897L12 13.88v.001l-5.247-1.769.359-4.027h2.679l-.183 2.063 2.392.805 2.396-.805.248-2.793H6.503l-.07-.778-.204-2.291-.129-1.441h11.8l-.129 1.441-.177 1.266z' },
-  { name: 'CSS', color: '#14532D', path: 'M3 2l1.578 17.824L12 22l7.422-2.176L21 2H3zm14.373 4.552H8.065l.21 2.371h8.888l-.637 7.09-4.526 1.257-4.525-1.257-.292-3.244h2.309l.148 1.656 2.36.635 2.362-.635.247-2.778H6.289l-.628-7.095h12.712z' },
-  { name: 'JavaScript', color: '#15803D', path: 'M3 3h18v18H3V3zm4.73 15.04c.4.85 1.2 1.23 2.4 1.23 1.42 0 2.32-.74 2.32-2.15v-5.3H10.4v5.24c0 .7-.3.96-.8.96-.52 0-.8-.35-.96-.7l-1.17.72zm5.8-.18c.5.98 1.6 1.4 3 1.4 1.53 0 2.58-.77 2.58-2.15 0-1.28-.68-1.9-2.16-2.48l-.5-.22c-.7-.3-1-.5-1-.96 0-.38.3-.67.88-.67.54 0 .9.24 1.2.67l1.1-.75c-.57-.85-1.35-1.18-2.32-1.18-1.45 0-2.38.93-2.38 2.15 0 1.25.73 1.9 1.87 2.37l.5.22c.76.34 1.2.54 1.2 1.1 0 .47-.43.82-1.1.82-.82 0-1.27-.43-1.6-1l-1.2.68z' },
-  { name: 'React', color: '#16A34A', path: 'M12 10.11c1.03 0 1.87.84 1.87 1.89 0 1-.84 1.85-1.87 1.85S10.13 13 10.13 12c0-1.05.84-1.89 1.87-1.89M7.37 20c.63.38 2.01-.2 3.6-1.7-.52-.59-1.03-1.23-1.51-1.9-.82-.08-1.63-.2-2.4-.36-.51 2.14-.32 3.61.31 3.96m.71-5.74l-.29-.51c-.11.29-.22.58-.29.86.27.06.57.11.88.16l-.3-.51m6.54-.76l.81-1.5-.81-1.5c-.3-.53-.62-1-.91-1.47C13.17 9 12.6 9 12 9c-.6 0-1.17 0-1.71.03-.29.47-.61.94-.91 1.47L8.57 12l.81 1.5c.3.53.62 1 .91 1.47.54.03 1.11.03 1.71.03.6 0 1.17 0 1.71-.03.29-.47.61-.94.91-1.47' },
-  { name: 'Node.js', color: '#166534', path: 'M12 1.85c-.27 0-.55.07-.78.2l-7.44 4.3c-.48.28-.78.8-.78 1.36v8.58c0 .56.3 1.08.78 1.36l1.95 1.12c.95.46 1.27.46 1.71.46 1.4 0 2.21-.85 2.21-2.33V8.44c0-.12-.1-.22-.22-.22H8.5c-.13 0-.23.1-.23.22v8.47c0 .66-.68 1.31-1.77.76L4.45 16.5a.26.26 0 0 1-.12-.21V7.71c0-.09.04-.17.12-.21l7.44-4.3c.08-.04.18-.04.27 0l7.44 4.3c.08.04.12.12.12.21v8.58c0 .08-.04.17-.12.21l-7.44 4.3c-.08.04-.17.04-.25 0' },
-  { name: 'Python', color: '#15803D', path: 'M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5' },
-  { name: 'GitHub', color: '#6B7280', path: 'M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49...' },
-  { name: 'MySQL', color: '#22C55E', path: 'M16.405 5.501c-.115 0-.193.014-.274.033v.013h.014...' }
-];
-
 const FloatingIcons = () => {
-  const iconPositions = [
-    { top: '10%', left: '5%' },
-    { top: '15%', right: '10%' },
-    { top: '40%', left: '3%' },
-    { top: '60%', right: '5%' },
-    { top: '75%', left: '8%' },
-    { top: '25%', right: '3%' },
-    { top: '50%', left: '92%' },
-    { top: '85%', right: '12%' }
-  ];
-
   return (
-    <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-      {techIcons.map((icon, index) => (
-        <motion.div
-          key={icon.name}
-          className="absolute opacity-[0.08]"
-          style={iconPositions[index % iconPositions.length]}
-          animate={{
-            y: [0, -15, 0],
-            rotate: [0, 3, -3, 0],
-          }}
-          transition={{
-            duration: 8 + index,
-            repeat: Infinity,
-            ease: 'easeInOut',
-            delay: index * 0.7,
-          }}
-        >
-          <svg
-            width="40"
-            height="40"
-            viewBox="0 0 24 24"
-            fill={icon.color}
-            className="md:w-12 md:h-12"
-          >
-            <path d={icon.path} />
-          </svg>
-        </motion.div>
-      ))}
+    <div className="fixed inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
+      {/* Editorial Grid Texture */}
+      <div className="absolute inset-0 bg-editorial-grid opacity-70" />
+
+      {/* Atmospheric Emerald Light Orbs */}
+      <motion.div
+        animate={{
+          scale: [1, 1.15, 1],
+          opacity: [0.35, 0.5, 0.35],
+        }}
+        transition={{
+          duration: 12,
+          repeat: Infinity,
+          ease: 'easeInOut',
+        }}
+        className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-emerald-500/[0.07] blur-[140px]"
+      />
+
+      <motion.div
+        animate={{
+          scale: [1.1, 1, 1.1],
+          opacity: [0.25, 0.4, 0.25],
+        }}
+        transition={{
+          duration: 15,
+          repeat: Infinity,
+          ease: 'easeInOut',
+          delay: 2,
+        }}
+        className="absolute top-1/3 -right-40 w-[550px] h-[550px] rounded-full bg-emerald-600/[0.06] blur-[150px]"
+      />
+
+      <motion.div
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [0.2, 0.35, 0.2],
+        }}
+        transition={{
+          duration: 18,
+          repeat: Infinity,
+          ease: 'easeInOut',
+          delay: 4,
+        }}
+        className="absolute -bottom-40 left-1/4 w-[700px] h-[700px] rounded-full bg-teal-600/[0.05] blur-[160px]"
+      />
+
+      {/* Subtle Editorial Technical Crosshairs & Corner Accents */}
+      <div className="absolute top-24 left-8 text-emerald-500/10 font-mono text-xs select-none">
+        + 12.9716° N, 77.5946° E
+      </div>
+      <div className="absolute top-24 right-8 text-emerald-500/10 font-mono text-xs select-none hidden md:block">
+        // SYSTEM_READY: OK
+      </div>
     </div>
   );
 };
