@@ -52,19 +52,19 @@ export const projectsData = [
     id: 1,
     title: "Food Connect Web App",
     description: "A Food connect application that fetches real-time Food data using APIs",
-    technologies: ["JavaScript", "HTML", "CSS", "REST API","PHP"],
+    technologies: ["JavaScript", "HTML", "CSS", "REST API", "PHP"],
     role: "Frontend Developer",
-    image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRknytHFuyQHddB-rcBwRWz9JOEW0SQDaz1QQ&s",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRknytHFuyQHddB-rcBwRWz9JOEW0SQDaz1QQ&s",
     github: "https://github.com/gokulraj1127mm-gif",
     live: "#"
   },
-    {
+  {
     id: 2,
     title: "Electricity Bill Calculator Web App",
     description: "Built a full-stack Electricity Bill Calculator with automated bill calculation, subsidy management, bill history, and PDF generation features.",
-    technologies: ["JavaScript", "HTML", "CSS", "React","Node.js","Express.js"],
+    technologies: ["JavaScript", "HTML", "CSS", "React", "Node.js", "Express.js"],
     role: "MERN Stack Developer",
-    image:"https://play-lh.googleusercontent.com/DUK2sg9G0YJhbCJsGvtwxpahh9MMwqUECq_-WQjIZNQKPBRHdTPfbj3unS3xuE5tE0NkAod1sacgW9NmlgKp",
+    image: "https://play-lh.googleusercontent.com/DUK2sg9G0YJhbCJsGvtwxpahh9MMwqUECq_-WQjIZNQKPBRHdTPfbj3unS3xuE5tE0NkAod1sacgW9NmlgKp",
     github: "https://github.com/gokulraj1127mm-gif",
     live: "https://electricity-bill-app-flame.vercel.app/"
   },
@@ -72,9 +72,9 @@ export const projectsData = [
     id: 3,
     title: "Daily-Expense-Tracker Web App",
     description: "A Daily Expense Tracker helps you easily record and manage your daily spending and income.",
-    technologies: ["JavaScript", "HTML", "CSS", "React","Node.js","Express.js"],
+    technologies: ["JavaScript", "HTML", "CSS", "React", "Node.js", "Express.js"],
     role: "MERN Stack Developer",
-    image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFxigCYAwzg_5peLTRXgkgKd65qoS62QkGO6XW_Flmhw&s=10",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFxigCYAwzg_5peLTRXgkgKd65qoS62QkGO6XW_Flmhw&s=10",
     github: "https://github.com/gokulraj1127mm-gif",
     live: "https://daily-expense-tracker-3-cviw.onrender.com"
   },
@@ -82,11 +82,21 @@ export const projectsData = [
     id: 4,
     title: "Smart Exam Seat Allocation System",
     description: "A Smart Exam Seat Allocation System helps you easily manage and allocate exam seats.",
-    technologies: ["JavaScript", "HTML", "CSS", "React","Node.js","Express.js"],
+    technologies: ["JavaScript", "HTML", "CSS", "React", "Node.js", "Express.js"],
     role: "MERN Stack Developer",
-    image:"https://cdn.iconscout.com/icon/premium/png-256-thumb/classroom-seating-icon-svg-download-png-2301876.png",
+    image: "https://cdn.iconscout.com/icon/premium/png-256-thumb/classroom-seating-icon-svg-download-png-2301876.png",
     github: "https://github.com/gokulraj1127mm-gif",
     live: "https://smart-exam-seat-allocation-system-1.onrender.com"
+  },
+  {
+    id: 5,
+    title: "AWS Practice Lab",
+    description: "An AWS Practice Lab is a hands-on learning platform designed to practice cloud computing concepts, explore AWS services, and gain practical experience with cloud infrastructure and deployment.",
+    technologies: ["AWS", "JavaScript", "HTML", "CSS", "React", "Node.js", "Express.js"],
+    role: "Cloud Computing Developer",
+    image: "https://www.softkit.dev/static/images/Amazon_web_services_main_image_2_84c24de2df.png",
+    github: "https://github.com/gokulraj1127mm-gif/aws-practice-lab",
+    live: "https://aws-practice-lab.onrender.com"
   }
 
 ];
@@ -122,18 +132,18 @@ export const certificationsData = [
     icon: "Award"
   },
   {
-    id:3,
-    name:"Getting Started with Full Stack Java Development",
-    platform:"simplilearn",
-    date:"2026",
-    icon:"Award"
+    id: 3,
+    name: "Getting Started with Full Stack Java Development",
+    platform: "simplilearn",
+    date: "2026",
+    icon: "Award"
   },
   {
-    id:4,
-    name:"Deep Learning",
-    platform:"simplilearn",
-    date:"2026",
-    icon:"Award"
+    id: 4,
+    name: "Deep Learning",
+    platform: "simplilearn",
+    date: "2026",
+    icon: "Award"
   }
 ];
 
@@ -155,14 +165,14 @@ export const educationData = [
 ];
 
 export const achievementsData = [
- 
+
   {
     id: 1,
     title: "Academic Excellence Award",
     description: "Recognized for outstanding academic performance in IT department",
     icon: "Certificate"
   },
- 
+
 ];
 
 export const navLinks = [
